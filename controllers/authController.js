@@ -19,6 +19,8 @@ export const registerUser = async (req, res) => {
   //TODO
   //остальная валидация
   //проверка email кода
+  //hash Пароля
+
   const user = await User.create(req.body);
   return res.json(user.dataValues.user_id);
 }
