@@ -8,7 +8,12 @@ const User = sequelize.define('UserModel', {
   role_name: {type: DataTypes.ENUM('ROLE_COMPANY', 'ROLE_PERSONAL'), allowNull: false},
   status: {type: DataTypes.ENUM('deactivate', 'activate'), allowNull: false, defaultValue: 'deactivate'},
   code: {type: DataTypes.INTEGER, allowNull: true},
-  code_date: {type: DataTypes.BIGINT, allowNull: true}
+  code_date: {type: DataTypes.BIGINT, allowNull: true},
+  first_name: {type: DataTypes.CHAR(50), allowNull: true},
+  second_name: {type: DataTypes.CHAR(50), allowNull: true},
+  company_name: {type: DataTypes.CHAR(50), allowNull: true},
+  company_role: {type: DataTypes.CHAR(50), allowNull: true},
+  inn: {type: DataTypes.BIGINT, allowNull: true}
 }, {tableName: 'users', timestamps: false});
 
 // создаст таблицу, если ее нет в бд почему-то
