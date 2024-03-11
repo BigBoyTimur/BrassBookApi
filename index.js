@@ -15,12 +15,7 @@ app.use(cookieParser());
 //routes
 app.use('/v1/auth', authRouter)
 app.use('/v1/staticFiles', staticFilesRouter)
-app.use(
-  cors({
-    credentials: true,
-    origin: ("*")
-  })
-);
+
 
 const port = 8000;
 app.listen(port, () => console.log(`server is running on port: ${port}`));
