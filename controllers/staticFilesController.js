@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 
 export const getAudio = async (req, res) => {
-  const filePath = path.join(path.dirname(fileURLToPath(import.meta.url)), '../compositions/audio', 'Lyudvig_van_Betkhoven_-_Minuet_72897184.mp3')
+  const filePath = path.join(path.dirname(fileURLToPath(import.meta.url)), '../compositions/audio', 'Lyudvig_van_Betkhoven_Minuet.mp3')
 
   const stat = fs.statSync(filePath);
   const fileSize = stat.size;

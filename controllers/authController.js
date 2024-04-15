@@ -89,13 +89,13 @@ export const loginUser = async (req, res) => {
   const user = await User.findOne({ where: { email: email } });
   if (!user) {
     res.status(400);
-    return res.json({ error: 'Такого пользователя не существует' });
+    return res.json({ error: 'Такого пользователя не существует', field: 'email' });
   }
   const isPasswordValid = await comparePassword(password, user.dataValues.password.trim());
 
   if (!isPasswordValid) {
     res.status(400);
-    return res.json({ error: 'Неправильный пароль' });
+    return res.json({ error: 'Неправильный пароль', field: 'password' });
   }
 
   const accessToken = await generateAccessToken(user.dataValues.user_id, email);

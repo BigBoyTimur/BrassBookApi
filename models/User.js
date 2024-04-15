@@ -16,7 +16,7 @@ const User = sequelize.define('UserModel', {
   inn: {type: DataTypes.BIGINT, allowNull: true}
 }, {tableName: 'users', timestamps: false});
 
-// создаст таблицу, если ее нет в бд почему-то
+// создаст таблицу в бд, если ее нет
 async function createTable(){
   await User.sync();
 }
