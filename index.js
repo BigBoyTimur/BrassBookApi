@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import {staticFilesRouter} from "./routes/staticFilesRouter.js";
 import compositionsRouter from "./routes/compositionsRouter.js"
+import compositionRouter from "./routes/compositionRouter.js";
 
 const app = express();
 app.use(express.json());
@@ -14,12 +15,12 @@ app.use(cookieParser());
 
 // отдает статические файлы
 app.use('/compositions', express.static('compositions'))
-
 //routes
 app.use('/v1/auth', authRouter)
 app.use('/v1/user/compositions', compositionsRouter)
+app.use('/v1/user/composition', compositionRouter)
 // Нет смысла использовать
-app.use('/v1/staticFiles', staticFilesRouter)
+// app.use('/v1/staticFiles', staticFilesRouter)
 
 
 const port = 8000;
